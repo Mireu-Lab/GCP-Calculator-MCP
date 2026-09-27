@@ -84,6 +84,14 @@ func GetActivePolicy() PricingPolicy {
 	return activePolicy
 }
 
+func GetExchangeRate() float64 {
+	policy := GetActivePolicy()
+	if ex, ok := policy.CurrencyExchange["USD_TO_KRW"]; ok && ex > 0 {
+		return ex
+	}
+	return 1383.28
+}
+
 func GetRegionMultiplier(region string) float64 {
 	policy := GetActivePolicy()
 	if mult, ok := policy.RegionMultipliers[strings.ToLower(region)]; ok {
@@ -102,17 +110,18 @@ func GetCommitmentMultiplier(commitment string) float64 {
 
 // Compute Engine calculation
 type ComputeEngineInput struct {
-	MachineType   string  `json:"machine_type"`
-	Region        string  `json:"region"`
-	Commitment    string  `json:"commitment"` // "none", "1-year", "3-year"
-	HoursPerMonth float64 `json:"hours_per_month"`
-	IsSpot        bool    `json:"is_spot"`
-	GPUType       string  `json:"gpu_type"`
-	GPUCount      int     `json:"gpu_count"`
-	TPUType       string  `json:"tpu_type"`
-	TPUCount      int     `json:"tpu_count"`
-	StorageGB     float64 `json:"storage_gb"`
-	StorageType   string  `json:"storage_type"`
+	MachineType     string  `json:"machine_type"`
+	Region          string  `json:"region"`
+	Commitment      string  `json:"commitment"` // "none", "1-year", "3-year"
+	HoursPerMonth   float64 `json:"hours_per_month"`
+	IsSpot          bool    `json:"is_spot"`
+	GPUType         string  `json:"gpu_type"`
+	GPUCount        int     `json:"gpu_count"`
+	TPUType         string  `json:"tpu_type"`
+	TPUCount        int     `json:"tpu_count"`
+	StorageGB       float64 `json:"storage_gb"`
+	StorageType     string  `json:"storage_type"`
+	ProvisionedIOPS float64 `json:"provisioned_iops"`
 }
 
 type ComputeEngineResult struct {
@@ -176,13 +185,24 @@ func CalculateComputeEngine(input ComputeEngineInput) ComputeEngineResult {
 	gpuCost := gpuHourly * input.HoursPerMonth
 	tpuCost := tpuHourly * input.HoursPerMonth
 
-	diskRate := 0.04 * regionMult
-	if strings.ToLower(input.StorageType) == "ssd" {
+	diskRate := 0.04 * regionMult // standard
+	switch strings.ToLower(input.StorageType) {
+	case "balanced", "pd-balanced":
+		diskRate = 0.10 * regionMult
+	case "ssd", "pd-ssd":
 		diskRate = 0.17 * regionMult
+	case "extreme", "pd-extreme":
+		diskRate = 0.125 * regionMult
 	}
 	storageCost := input.StorageGB * diskRate
+	if strings.Contains(strings.ToLower(input.StorageType), "extreme") && input.ProvisionedIOPS > 0 {
+		// Provisioned IOPS: ~89.91 KRW in US (~$0.065), 117.58 KRW in Seoul (~$0.085)
+		iopsMonthlyUSD := 0.065 * regionMult
+		storageCost += input.ProvisionedIOPS * iopsMonthlyUSD * (input.HoursPerMonth / 730.0)
+	}
 	totalUSD := computeCost + gpuCost + tpuCost + storageCost
-	totalKRW := totalUSD * 1350.0
+	exchangeRate := GetExchangeRate()
+	totalKRW := totalUSD * exchangeRate
 
 	tip := "Consider 3-Year Committed Use Discounts (CUD) to save up to 55%."
 	if input.IsSpot {
@@ -253,7 +273,7 @@ func CalculateCloudRun(input CloudRunInput) CloudRunResult {
 	memCost := billableMem * 0.00000250
 
 	totalUSD := reqCost + vcpuCost + memCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 
 	return CloudRunResult{
 		BillableRequests: billableRequests,
@@ -296,7 +316,7 @@ func CalculateStorage(input StorageInput) StorageResult {
 	egressCost := egressBillable * 0.12
 
 	totalUSD := storageCost + egressCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 
 	return StorageResult{
 		StorageClass:     input.StorageClass,
@@ -351,7 +371,7 @@ func CalculateGKE(input GKEInput) GKEResult {
 	}
 
 	totalUSD := clusterFee + workloadCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 
 	return GKEResult{
 		Mode:             input.Mode,
@@ -402,7 +422,7 @@ func CalculateCloudSQL(input CloudSQLInput) CloudSQLResult {
 	computeCost := hourly * input.Hours * mult
 	storageCost := input.StorageGB * 0.17
 	totalUSD := computeCost + storageCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 
 	return CloudSQLResult{
 		InstanceType:     input.InstanceType,
@@ -436,7 +456,7 @@ func CalculateBigQuery(input BigQueryInput) BigQueryResult {
 	storageCost := billableGB * 0.02
 
 	totalUSD := queryCost + storageCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 
 	return BigQueryResult{
 		QueryCost:        math.Round(queryCost*100) / 100,
@@ -486,7 +506,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &aeInput)
 		res := CalculateAppEngine(aeInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "App Engine", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 
 	case "storage", "cloud_storage", "gcs":
@@ -501,7 +521,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &fsInput)
 		res := CalculateFilestore(fsInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "Filestore", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 
 	case "gke", "kubernetes":
@@ -523,7 +543,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &alloyInput)
 		res := CalculateAlloyDB(alloyInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "AlloyDB for PostgreSQL", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 
 	case "bigquery", "bq":
@@ -538,7 +558,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &dpInput)
 		res := CalculateDataproc(dpInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "Dataproc", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 
 	case "dataflow", "beam":
@@ -546,7 +566,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &dfInput)
 		res := CalculateDataflow(dfInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "Dataflow", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 
 	case "vertex_ai", "vertex", "gemini":
@@ -554,7 +574,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		bytes, _ := json.Marshal(input.Params)
 		_ = json.Unmarshal(bytes, &vxInput)
 		res := CalculateVertexAI(vxInput)
-		totalKRW := res.TotalMonthlyCost * 1350.0
+		totalKRW := res.TotalMonthlyCost * GetExchangeRate()
 		return UniversalResult{ServiceName: "Vertex AI", TotalMonthlyUSD: res.TotalMonthlyCost, TotalMonthlyKRW: math.Round(totalKRW), CatalogMatches: matches, Details: res, SavingsTip: res.SavingsTip}
 	}
 
@@ -590,7 +610,7 @@ func CalculateService(input UniversalInput) UniversalResult {
 		if strings.Contains(unit, "1M") || strings.Contains(unit, "GB-month") {
 			estCostUSD = rate * qty * regMult
 		}
-		estCostKRW := estCostUSD * 1350.0
+		estCostKRW := estCostUSD * GetExchangeRate()
 
 		return UniversalResult{
 			ServiceName:      input.ServiceName,
@@ -648,7 +668,7 @@ func EstimateInfrastructure(input EstimateInput) EstimateResult {
 	}
 
 	totalUSD := ceCost + crCost + stCost
-	totalKRW := totalUSD * 1350.0
+	totalKRW := totalUSD * GetExchangeRate()
 	return EstimateResult{
 		ComputeEngineCost: ceCost,
 		CloudRunCost:      crCost,

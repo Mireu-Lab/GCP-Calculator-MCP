@@ -1,18 +1,35 @@
 {
-  "updated_at": "2026-09-24T02:02:00Z",
-  "version": "7.0.0-advanced-calculator",
-  "total_products": 115,
+  "updated_at": "2026-09-27T00:01:10Z",
+  "version": "8.0.0-krw-official-2026",
+  "total_products": 116,
+  "currency_exchange": {
+    "USD_TO_KRW": 1383.28
+  },
+  "region_multipliers": {
+    "asia-east1": 1.15,
+    "asia-northeast1": 1.18,
+    "asia-northeast3": 1.2,
+    "europe-west1": 1.1,
+    "us-central1": 1,
+    "us-east1": 1,
+    "us-west1": 1
+  },
+  "commitment_discounts": {
+    "1-year": 0.63,
+    "3-year": 0.45,
+    "none": 1
+  },
   "categories_summary": {
-    "Compute": "VMs, Spot, Containers (GKE, Cloud Run), Serverless, App Engine, Batch, GCVE",
-    "Storage": "Cloud Storage, Persistent Disk, Hyperdisk, Local SSD, Filestore, NetApp",
-    "Databases": "Cloud SQL, Spanner (Graph/Vector), Bigtable, Firestore, AlloyDB, Memorystore",
-    "Analytics": "BigQuery (BQML/Omni), Dataproc, Dataflow, Pub/Sub, Kafka, Looker, Dataplex",
     "AI_ML": "Vertex AI (Gemini 1.5 Flash/Pro, Imagen, Veo), Agent Builder, Colab, Pre-trained APIs",
-    "Networking": "VPC, Load Balancing, CDN, Interconnect, HA VPN, Cloud DNS, NAT",
-    "Security": "IAM, KMS, Secret Manager, Cloud Armor, SCC, DLP, IAP, Chronicle",
+    "Analytics": "BigQuery (BQML/Omni), Dataproc, Dataflow, Pub/Sub, Kafka, Looker, Dataplex",
+    "Compute": "VMs, Spot, Containers (GKE, Cloud Run), Serverless, App Engine, Batch, GCVE",
+    "Databases": "Cloud SQL, Spanner (Graph/Vector), Bigtable, Firestore, AlloyDB, Memorystore",
     "DevOps": "Cloud Monitoring, Cloud Logging, Cloud Build, Artifact Registry, Cloud Workstations",
     "Hybrid": "Google Distributed Cloud (GDC Connected / Air-gapped), Migrate to VMs/Containers",
-    "Management": "Cloud Billing & Cost Management (FinOps), Terraform / Deployment Manager"
+    "Management": "Cloud Billing \u0026 Cost Management (FinOps), Terraform / Deployment Manager",
+    "Networking": "VPC, Load Balancing, CDN, Interconnect, HA VPN, Cloud DNS, NAT",
+    "Security": "IAM, KMS, Secret Manager, Cloud Armor, SCC, DLP, IAP, Chronicle",
+    "Storage": "Cloud Storage, Persistent Disk, Hyperdisk, Local SSD, Filestore, NetApp"
   },
   "products": [
     {
@@ -25,6 +42,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -38,6 +56,7 @@
       "pricing_unit": "vCPU-Hour (Spot VM)",
       "pricing_model": "Pay-as-you-go (up to 91% discount)",
       "base_rate_usd": 0.0025,
+      "base_rate_krw": 3.46,
       "free_tier_allowance": "Spot VMs can be preempted at any time",
       "cost_optimization_tip": "Use Spot VMs for fault-tolerant batch/CI workloads"
     },
@@ -45,12 +64,13 @@
       "id": "gcp-prod-003",
       "category": "컴퓨트 (Compute)",
       "main_product": "Compute Engine",
-      "sub_service": "Shielded VMs & Confidential VMs",
+      "sub_service": "Shielded VMs \u0026 Confidential VMs",
       "service_type": "IaaS (보안 가상 머신)",
       "description": "하드웨어 기반 보안 부팅(UEFI",
       "pricing_unit": "vCPU-Hour",
       "pricing_model": "Pay-as-you-go",
       "base_rate_usd": 0.04,
+      "base_rate_krw": 55.33,
       "free_tier_allowance": "Includes vTPM / AMD SEV encryption",
       "cost_optimization_tip": "Use Confidential VMs for compliance"
     },
@@ -64,6 +84,7 @@
       "pricing_unit": "Node-Hour",
       "pricing_model": "Physical Host Allocation",
       "base_rate_usd": 2.5,
+      "base_rate_krw": 3458.2,
       "free_tier_allowance": "10% Sole-tenant premium",
       "cost_optimization_tip": "Use for BYOL licensing compliance"
     },
@@ -77,6 +98,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -90,6 +112,7 @@
       "pricing_unit": "Pod vCPU-Hour / RAM-Hour",
       "pricing_model": "Resource Usage",
       "base_rate_usd": 0.0445,
+      "base_rate_krw": 61.56,
       "free_tier_allowance": "Includes GKE Free Tier 4/mo cluster credit",
       "cost_optimization_tip": "Autopilot eliminates unallocated node waste"
     },
@@ -103,6 +126,7 @@
       "pricing_unit": "vCPU-Hour",
       "pricing_model": "Enterprise Tier",
       "base_rate_usd": 0.008,
+      "base_rate_krw": 11.07,
       "free_tier_allowance": "Multi-cloud management fee",
       "cost_optimization_tip": "Centralized GKE policy governance"
     },
@@ -116,6 +140,7 @@
       "pricing_unit": "1M Requests / vCPU-Sec",
       "pricing_model": "Serverless Pay-per-use",
       "base_rate_usd": 0.4,
+      "base_rate_krw": 553.31,
       "free_tier_allowance": "2M free requests + 180k vCPU-sec free",
       "cost_optimization_tip": "High concurrency reduces billable container duration"
     },
@@ -126,11 +151,12 @@
       "sub_service": "Cloud Run Jobs",
       "service_type": "서버리스 배치 런타임",
       "description": "웹 요청 없이 지정된 배치 작업이나 데이터 변환 작업을 비동기 병렬로 실행하고 자동 종료되는 컨테이너 작업 플랫폼",
-      "pricing_unit": "vCPU-Sec / RAM-Sec",
+      "pricing_unit": "vCPU-Sec (0.02988 KRW) / GiB-Sec (0.00332 KRW)",
       "pricing_model": "Serverless Batch",
-      "base_rate_usd": 2.4e-05,
+      "base_rate_usd": 0.0000288,
+      "base_rate_krw": 0.02988,
       "free_tier_allowance": "2M free requests/mo",
-      "cost_optimization_tip": "Scale to zero upon job completion"
+      "cost_optimization_tip": "Seoul Jobs CPU is 0.02988 KRW/sec, Memory is 0.00332 KRW/sec. 32-task parallel jobs consume quota fast."
     },
     {
       "id": "gcp-prod-010",
@@ -142,6 +168,7 @@
       "pricing_unit": "1M Invocations / GHz-Sec",
       "pricing_model": "FaaS Serverless",
       "base_rate_usd": 0.4,
+      "base_rate_krw": 553.31,
       "free_tier_allowance": "2M free invocations + 400k GHz-sec free",
       "cost_optimization_tip": "Ideal for event-driven microservices"
     },
@@ -155,6 +182,7 @@
       "pricing_unit": "Instance-Hour",
       "pricing_model": "PaaS Billing",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "28 free F1 instance-hours per day",
       "cost_optimization_tip": "Standard environment scales to zero"
     },
@@ -168,6 +196,7 @@
       "pricing_unit": "Instance-Hour",
       "pricing_model": "PaaS Billing",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "28 free F1 instance-hours per day",
       "cost_optimization_tip": "Standard environment scales to zero"
     },
@@ -181,6 +210,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -194,6 +224,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -207,6 +238,7 @@
       "pricing_unit": "GB-Month",
       "pricing_model": "Object Storage",
       "base_rate_usd": 0.02,
+      "base_rate_krw": 27.67,
       "free_tier_allowance": "10GB free egress to internet/mo",
       "cost_optimization_tip": "Use standard storage for hot active assets"
     },
@@ -220,8 +252,9 @@
       "pricing_unit": "GB-Month",
       "pricing_model": "Storage Tiering",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "30-day minimum storage duration",
-      "cost_optimization_tip": "Ideal for backups accessed < 1x/month"
+      "cost_optimization_tip": "Ideal for backups accessed \u003c 1x/month"
     },
     {
       "id": "gcp-prod-017",
@@ -233,8 +266,9 @@
       "pricing_unit": "GB-Month",
       "pricing_model": "Storage Tiering",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "30-day minimum storage duration",
-      "cost_optimization_tip": "Ideal for backups accessed < 1x/month"
+      "cost_optimization_tip": "Ideal for backups accessed \u003c 1x/month"
     },
     {
       "id": "gcp-prod-018",
@@ -242,12 +276,13 @@
       "main_product": "Persistent Disk",
       "sub_service": "Standard / Balanced / SSD / Extreme PD",
       "service_type": "블록 스토리지 (SAN)",
-      "description": "Compute Engine 및 GKE 인스턴스에 네트워크로 마운트되는 가상 하드디스크 (스냅샷, 동적 크기 확장 지원)",
-      "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
+      "description": "GCP 가상 하드디스크: Balanced ($0.10/GB, 138.33원), SSD ($0.17/GB, 235.16원), Extreme ($0.14/GB + IOPS당 월 117.58원)",
+      "pricing_unit": "GB-Month \u0026 Provisioned IOPS",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
-      "base_rate_usd": 0.0336,
+      "base_rate_usd": 0.1,
+      "base_rate_krw": 138.33,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
-      "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
+      "cost_optimization_tip": "Extreme PD has provisioned IOPS charge (117.58 KRW / IOPS / mo in Seoul). Use Balanced PD for standard dev."
     },
     {
       "id": "gcp-prod-019",
@@ -259,6 +294,7 @@
       "pricing_unit": "Provisioned IOPS / Throughput",
       "pricing_model": "Block Storage",
       "base_rate_usd": 0.065,
+      "base_rate_krw": 89.91,
       "free_tier_allowance": "Independent IOPS and Throughput scaling",
       "cost_optimization_tip": "Decouple storage IOPS for mission-critical RDBMS"
     },
@@ -272,6 +308,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -285,6 +322,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -298,6 +336,7 @@
       "pricing_unit": "GB-Month (ONTAP)",
       "pricing_model": "Managed Enterprise File",
       "base_rate_usd": 0.28,
+      "base_rate_krw": 387.32,
       "free_tier_allowance": "Multi-protocol NFS/SMB support",
       "cost_optimization_tip": "Enterprise ONTAP features (snapshots, cloning)"
     },
@@ -311,6 +350,7 @@
       "pricing_unit": "GB-Month",
       "pricing_model": "Object Storage",
       "base_rate_usd": 0.02,
+      "base_rate_krw": 27.67,
       "free_tier_allowance": "10GB free egress to internet/mo",
       "cost_optimization_tip": "Use standard storage for hot active assets"
     },
@@ -323,7 +363,7 @@
       "description": "최대 수백 테라바이트~페타바이트의 데이터를 네트워크 대역폭 한계 없이 암호화된 물리 어플라이언스에 담아 데이터센터로 직접 운송",
       "pricing_unit": "GB Transferred / Appliance Day",
       "pricing_model": "Data Migration",
-      "base_rate_usd": 0.0,
+      "base_rate_usd": 0,
       "free_tier_allowance": "Free for GCS ingestion",
       "cost_optimization_tip": "No GCP ingress fee"
     },
@@ -337,6 +377,7 @@
       "pricing_unit": "Instance-Hour + Storage GB",
       "pricing_model": "Managed RDBMS",
       "base_rate_usd": 0.015,
+      "base_rate_krw": 20.75,
       "free_tier_allowance": "Includes automated backups",
       "cost_optimization_tip": "db-f1-micro (bash.015/hr) for dev/test"
     },
@@ -350,6 +391,7 @@
       "pricing_unit": "Instance-Hour + Storage GB",
       "pricing_model": "Managed RDBMS",
       "base_rate_usd": 0.015,
+      "base_rate_krw": 20.75,
       "free_tier_allowance": "Includes automated backups",
       "cost_optimization_tip": "db-f1-micro (bash.015/hr) for dev/test"
     },
@@ -363,6 +405,7 @@
       "pricing_unit": "Node-Hour / PU-100",
       "pricing_model": "Global ACID RDBMS",
       "base_rate_usd": 0.09,
+      "base_rate_krw": 124.5,
       "free_tier_allowance": "99.999% SLA availability",
       "cost_optimization_tip": "Scale by 100 Processing Units (PUs)"
     },
@@ -376,8 +419,9 @@
       "pricing_unit": "Node-Hour / PU-100",
       "pricing_model": "Distributed Graph/Vector",
       "base_rate_usd": 0.09,
-      "free_tier_allowance": "Built-in ISO GQL & K-NN Vector search",
-      "cost_optimization_tip": "Run Graph & Vector analytics inline with ACID RDBMS"
+      "base_rate_krw": 124.5,
+      "free_tier_allowance": "Built-in ISO GQL \u0026 K-NN Vector search",
+      "cost_optimization_tip": "Run Graph \u0026 Vector analytics inline with ACID RDBMS"
     },
     {
       "id": "gcp-prod-029",
@@ -389,8 +433,9 @@
       "pricing_unit": "Node-Hour / PU-100",
       "pricing_model": "Distributed Graph/Vector",
       "base_rate_usd": 0.09,
-      "free_tier_allowance": "Built-in ISO GQL & K-NN Vector search",
-      "cost_optimization_tip": "Run Graph & Vector analytics inline with ACID RDBMS"
+      "base_rate_krw": 124.5,
+      "free_tier_allowance": "Built-in ISO GQL \u0026 K-NN Vector search",
+      "cost_optimization_tip": "Run Graph \u0026 Vector analytics inline with ACID RDBMS"
     },
     {
       "id": "gcp-prod-030",
@@ -402,6 +447,7 @@
       "pricing_unit": "Node-Hour + Storage GB",
       "pricing_model": "Wide-column NoSQL",
       "base_rate_usd": 0.65,
+      "base_rate_krw": 899.13,
       "free_tier_allowance": "Sub-10ms latency at PB scale",
       "cost_optimization_tip": "Use HDD storage (bash.026/GB) for log archiving"
     },
@@ -409,12 +455,13 @@
       "id": "gcp-prod-031",
       "category": "데이터베이스 (Databases)",
       "main_product": "Cloud Bigtable",
-      "sub_service": "Bigtable Vector Search & Change Streams",
+      "sub_service": "Bigtable Vector Search \u0026 Change Streams",
       "service_type": "빅데이터 NoSQL 확장 기능",
       "description": "대규모 NoSQL 데이터에 대한 실시간 변경 데이터 캡처(CDC) 및 인라인 벡터 유사도 검색 결합",
       "pricing_unit": "Node-Hour + Storage GB",
       "pricing_model": "Wide-column NoSQL",
       "base_rate_usd": 0.65,
+      "base_rate_krw": 899.13,
       "free_tier_allowance": "Sub-10ms latency at PB scale",
       "cost_optimization_tip": "Use HDD storage (bash.026/GB) for log archiving"
     },
@@ -428,6 +475,7 @@
       "pricing_unit": "100k Document Reads / Writes",
       "pricing_model": "NoSQL Document DB",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "50k reads + 20k writes free daily",
       "cost_optimization_tip": "Offline mobile SDK synchronization"
     },
@@ -441,6 +489,7 @@
       "pricing_unit": "Instance-Hour",
       "pricing_model": "PaaS Billing",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "28 free F1 instance-hours per day",
       "cost_optimization_tip": "Standard environment scales to zero"
     },
@@ -454,6 +503,7 @@
       "pricing_unit": "vCPU-Hour + Storage GB",
       "pricing_model": "Managed PostgreSQL Engine",
       "base_rate_usd": 0.0544,
+      "base_rate_krw": 75.25,
       "free_tier_allowance": "Columnar engine included",
       "cost_optimization_tip": "AlloyDB is 4x faster for OLTP than standard Postgres"
     },
@@ -467,6 +517,7 @@
       "pricing_unit": "vCPU-Hour + Storage GB",
       "pricing_model": "Managed PostgreSQL Engine",
       "base_rate_usd": 0.0544,
+      "base_rate_krw": 75.25,
       "free_tier_allowance": "Columnar engine included",
       "cost_optimization_tip": "AlloyDB is 4x faster for OLTP than standard Postgres"
     },
@@ -480,6 +531,7 @@
       "pricing_unit": "vCPU-Hour + Storage GB",
       "pricing_model": "Managed PostgreSQL Engine",
       "base_rate_usd": 0.0544,
+      "base_rate_krw": 75.25,
       "free_tier_allowance": "Columnar engine included",
       "cost_optimization_tip": "AlloyDB is 4x faster for OLTP than standard Postgres"
     },
@@ -493,6 +545,7 @@
       "pricing_unit": "GB-Hour (Redis/Memcached)",
       "pricing_model": "In-memory Cache",
       "base_rate_usd": 0.036,
+      "base_rate_krw": 49.8,
       "free_tier_allowance": "Microsecond latency cache",
       "cost_optimization_tip": "Use Basic tier for non-HA API cache"
     },
@@ -506,6 +559,7 @@
       "pricing_unit": "GB-Hour (Redis/Memcached)",
       "pricing_model": "In-memory Cache",
       "base_rate_usd": 0.036,
+      "base_rate_krw": 49.8,
       "free_tier_allowance": "Microsecond latency cache",
       "cost_optimization_tip": "Use Basic tier for non-HA API cache"
     },
@@ -519,6 +573,7 @@
       "pricing_unit": "vCPU-Hour + Storage GB",
       "pricing_model": "Managed PostgreSQL Engine",
       "base_rate_usd": 0.0544,
+      "base_rate_krw": 75.25,
       "free_tier_allowance": "Columnar engine included",
       "cost_optimization_tip": "AlloyDB is 4x faster for OLTP than standard Postgres"
     },
@@ -532,8 +587,9 @@
       "pricing_unit": "TB Scanned (.25) / Storage GB",
       "pricing_model": "Serverless DW",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries + 10GB free storage/mo",
-      "cost_optimization_tip": "Long-term storage (>90 days) gets 50% discount (bash.01/GB)"
+      "cost_optimization_tip": "Long-term storage (\u003e90 days) gets 50% discount (bash.01/GB)"
     },
     {
       "id": "gcp-prod-041",
@@ -545,8 +601,9 @@
       "pricing_unit": "TB Scanned (.25) / Storage GB",
       "pricing_model": "Serverless DW",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries + 10GB free storage/mo",
-      "cost_optimization_tip": "Long-term storage (>90 days) gets 50% discount (bash.01/GB)"
+      "cost_optimization_tip": "Long-term storage (\u003e90 days) gets 50% discount (bash.01/GB)"
     },
     {
       "id": "gcp-prod-042",
@@ -558,6 +615,7 @@
       "pricing_unit": "TB Scanned / Model Train Hour",
       "pricing_model": "In-database ML",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries/mo",
       "cost_optimization_tip": "Train ML models inside BigQuery using SQL"
     },
@@ -571,8 +629,9 @@
       "pricing_unit": "TB Scanned (.25) / Storage GB",
       "pricing_model": "Serverless DW",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries + 10GB free storage/mo",
-      "cost_optimization_tip": "Long-term storage (>90 days) gets 50% discount (bash.01/GB)"
+      "cost_optimization_tip": "Long-term storage (\u003e90 days) gets 50% discount (bash.01/GB)"
     },
     {
       "id": "gcp-prod-044",
@@ -584,8 +643,9 @@
       "pricing_unit": "TB Scanned (.25) / Storage GB",
       "pricing_model": "Serverless DW",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries + 10GB free storage/mo",
-      "cost_optimization_tip": "Long-term storage (>90 days) gets 50% discount (bash.01/GB)"
+      "cost_optimization_tip": "Long-term storage (\u003e90 days) gets 50% discount (bash.01/GB)"
     },
     {
       "id": "gcp-prod-045",
@@ -596,7 +656,7 @@
       "description": "Google Ads, YouTube, Salesforce, Amazon S3 등 외부 소스에서 BigQuery로 데이터를 정기적으로 자동 수집",
       "pricing_unit": "GB Transferred / Appliance Day",
       "pricing_model": "Data Migration",
-      "base_rate_usd": 0.0,
+      "base_rate_usd": 0,
       "free_tier_allowance": "Free for GCS ingestion",
       "cost_optimization_tip": "No GCP ingress fee"
     },
@@ -610,6 +670,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -623,6 +684,7 @@
       "pricing_unit": "vCPU-Hour Premium (bash.01)",
       "pricing_model": "Managed Spark/Hadoop",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "90-second cluster provisioning",
       "cost_optimization_tip": "Dataproc Serverless eliminates cluster idle cost"
     },
@@ -636,6 +698,7 @@
       "pricing_unit": "vCPU-Hour + Mem-Hour",
       "pricing_model": "Serverless Beam Pipeline",
       "base_rate_usd": 0.056,
+      "base_rate_krw": 77.46,
       "free_tier_allowance": "Exactly-once stream processing",
       "cost_optimization_tip": "Dataflow Prime autoscales workers automatically"
     },
@@ -649,6 +712,7 @@
       "pricing_unit": "vCPU-Hour + Mem-Hour",
       "pricing_model": "Serverless Beam Pipeline",
       "base_rate_usd": 0.056,
+      "base_rate_krw": 77.46,
       "free_tier_allowance": "Exactly-once stream processing",
       "cost_optimization_tip": "Dataflow Prime autoscales workers automatically"
     },
@@ -662,6 +726,7 @@
       "pricing_unit": "GB Throughput",
       "pricing_model": "Global Message Queue",
       "base_rate_usd": 0.04,
+      "base_rate_krw": 55.33,
       "free_tier_allowance": "10GB free throughput per month",
       "cost_optimization_tip": "Pub/Sub Lite saves ~80% for high-volume logs"
     },
@@ -675,6 +740,7 @@
       "pricing_unit": "GB Throughput",
       "pricing_model": "Global Message Queue",
       "base_rate_usd": 0.04,
+      "base_rate_krw": 55.33,
       "free_tier_allowance": "10GB free throughput per month",
       "cost_optimization_tip": "Pub/Sub Lite saves ~80% for high-volume logs"
     },
@@ -688,6 +754,7 @@
       "pricing_unit": "Broker-Hour + Storage GB",
       "pricing_model": "Managed Apache Kafka",
       "base_rate_usd": 0.1,
+      "base_rate_krw": 138.33,
       "free_tier_allowance": "Fully compatible with open-source Kafka",
       "cost_optimization_tip": "No ZooKeeper/KRaft cluster management"
     },
@@ -696,11 +763,12 @@
       "category": "데이터 분석 (Analytics)",
       "main_product": "Looker",
       "sub_service": "Looker Enterprise",
-      "service_type": "시맨틱 모델링 & 차세대 BI",
+      "service_type": "시맨틱 모델링 \u0026 차세대 BI",
       "description": "LookML(시맨틱 모델링 계층)을 통해 단일 신뢰 소스(Single Source of Truth)를 보장하는 엔터프라이즈 데이터 플랫폼",
       "pricing_unit": "User-Month / Platform Fee",
-      "pricing_model": "BI & Semantic Modeling",
-      "base_rate_usd": 30.0,
+      "pricing_model": "BI \u0026 Semantic Modeling",
+      "base_rate_usd": 30,
+      "base_rate_krw": 41498.4,
       "free_tier_allowance": "Looker Studio free tier available",
       "cost_optimization_tip": "Single source of truth via LookML"
     },
@@ -712,8 +780,9 @@
       "service_type": "클라우드 리포팅 도구",
       "description": "GCP 및 수백 개 데이터 소스에 연결하여 손쉽게 드래그 앤 드롭으로 대화형 대시보드를 무료로 제작",
       "pricing_unit": "User-Month / Platform Fee",
-      "pricing_model": "BI & Semantic Modeling",
-      "base_rate_usd": 30.0,
+      "pricing_model": "BI \u0026 Semantic Modeling",
+      "base_rate_usd": 30,
+      "base_rate_krw": 41498.4,
       "free_tier_allowance": "Looker Studio free tier available",
       "cost_optimization_tip": "Single source of truth via LookML"
     },
@@ -721,12 +790,13 @@
       "id": "gcp-prod-055",
       "category": "데이터 분석 (Analytics)",
       "main_product": "Dataplex",
-      "sub_service": "Dataplex Governance & Catalog",
-      "service_type": "데이터 패브릭 & 거버넌스",
+      "sub_service": "Dataplex Governance \u0026 Catalog",
+      "service_type": "데이터 패브릭 \u0026 거버넌스",
       "description": "분산된 데이터 레이크 및 웨어하우스(GCS, BigQuery)의 메타데이터 검색, 데이터 계보(Lineage), 데이터 품질 자동 검증",
       "pricing_unit": "GB-Month",
       "pricing_model": "Object Storage",
       "base_rate_usd": 0.02,
+      "base_rate_krw": 27.67,
       "free_tier_allowance": "10GB free egress to internet/mo",
       "cost_optimization_tip": "Use standard storage for hot active assets"
     },
@@ -738,8 +808,9 @@
       "service_type": "GUI 기반 코드 프리 ETL",
       "description": "오픈소스 CDAP 기반으로 수백 개의 커넥터와 데이터 변환 블록을 드래그 앤 드롭으로 연결하는 시각적 데이터 파이프라인 도구",
       "pricing_unit": "Environment-Hour / Slot",
-      "pricing_model": "Data Governance & Airflow",
+      "pricing_model": "Data Governance \u0026 Airflow",
       "base_rate_usd": 0.35,
+      "base_rate_krw": 484.15,
       "free_tier_allowance": "Fully managed Apache Airflow",
       "cost_optimization_tip": "Automate end-to-end data orchestration DAGs"
     },
@@ -751,8 +822,9 @@
       "service_type": "관리형 워크플로 오케스트레이션",
       "description": "Apache Airflow 기반으로 다단계 데이터 파이프라인(ETL, ML 학습, 알림 등)을 DAG 코드로 정의하고 스케줄링",
       "pricing_unit": "Environment-Hour / Slot",
-      "pricing_model": "Data Governance & Airflow",
+      "pricing_model": "Data Governance \u0026 Airflow",
       "base_rate_usd": 0.35,
+      "base_rate_krw": 484.15,
       "free_tier_allowance": "Fully managed Apache Airflow",
       "cost_optimization_tip": "Automate end-to-end data orchestration DAGs"
     },
@@ -764,8 +836,9 @@
       "service_type": "멀티모달 파운데이션 모델 (LLM)",
       "description": "텍스트, 고화질 이미지, 오디오, 비디오, 코드를 동시 처리하고 방대한 컨텍스트 윈도우를 지원하는 구글 최신 파운데이션 모델",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -777,8 +850,9 @@
       "service_type": "이미지 생성 및 편집 모델",
       "description": "텍스트 프롬프트 기반 고해상도 이미지 생성, 사진 편집/인페인팅/아웃페인팅 및 SynthID 디지털 워터마킹 내장",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -790,8 +864,9 @@
       "service_type": "텍스트-비디오 생성 모델",
       "description": "프롬프트 기반으로 일관성 있는 시각적 연출과 카메라 앵글을 반영한 고품질 영상 클립 생성",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -800,11 +875,12 @@
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Vertex AI",
       "sub_service": "Vertex AI Studio",
-      "service_type": "프롬프트 엔지니어링 & 튜닝 랩",
+      "service_type": "프롬프트 엔지니어링 \u0026 튜닝 랩",
       "description": "웹 콘솔에서 Gemini 및 파운데이션 모델 프롬프트를 설계",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -813,11 +889,12 @@
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Vertex AI",
       "sub_service": "Vertex AI Model Garden",
-      "service_type": "오픈소스 & 서드파티 모델 허브",
+      "service_type": "오픈소스 \u0026 서드파티 모델 허브",
       "description": "Gemini뿐만 아니라 Gemma, Meta Llama, Anthropic Claude, Mistral 등 150개 이상의 최신 모델을 클릭 한 번으로 배포",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -825,12 +902,13 @@
       "id": "gcp-prod-063",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Vertex AI",
-      "sub_service": "Vertex AI Search & Conversation (Agent Builder)",
-      "service_type": "생성형 엔터프라이즈 RAG & 챗봇",
+      "sub_service": "Vertex AI Search \u0026 Conversation (Agent Builder)",
+      "service_type": "생성형 엔터프라이즈 RAG \u0026 챗봇",
       "description": "사내 문서(PDF, 웹, 드라이브)를 기반으로 할루시네이션 없이 정확한 답변을 제공하는 RAG 검색 엔진 및 음성/텍스트 대화형 에이전트 구축",
       "pricing_unit": "GB-Month",
       "pricing_model": "Block Storage",
       "base_rate_usd": 0.04,
+      "base_rate_krw": 55.33,
       "free_tier_allowance": "Includes 30GB standard PD free tier",
       "cost_optimization_tip": "Standard PD (bash.04) vs SSD (bash.17)"
     },
@@ -842,8 +920,9 @@
       "service_type": "대규모 벡터 데이터베이스",
       "description": "수십억 개의 고차원 임베딩 벡터에 대해 서브밀리초 단위로 초고속 근사 최근접 이웃(ANN) 검색을 제공하는 분산 벡터 엔진",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -855,8 +934,9 @@
       "service_type": "보안 협업 데이터 과학 노트북",
       "description": "구글 코랩의 직관적인 사용자 인터페이스에 VPC-SC, 사설 IP, 엔터프라이즈 IAM, Gemini 코드 어시스턴트를 결합한 관리형 개발 환경",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -868,8 +948,9 @@
       "service_type": "엔터프라이즈 JupyterLab 환경",
       "description": "Git 연동, 사전 설치된 ML 라이브러리(TensorFlow, PyTorch)와 맞춤형 GPU 가속 리소스를 제공하는 데이터 사이언스 IDE",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -881,8 +962,9 @@
       "service_type": "ML 피처 저장소",
       "description": "머신러닝 학습 및 실시간 서빙에 필요한 피처(Feature)를 중앙에서 등록, 버전 관리하고 일관성 있게 공유",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -894,8 +976,9 @@
       "service_type": "MLOps 오케스트레이션",
       "description": "Kubeflow Pipelines 및 TFX를 기반으로 데이터 추출부터 모델 검증",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -907,8 +990,9 @@
       "service_type": "분산 분산 학습 클러스터",
       "description": "커스텀 도커 컨테이너를 기반으로 최신 NVIDIA GPU(A100, H100) 및 Google Cloud TPU v4/v5p 클러스터를 활용한 대규모 분산 딥러닝 학습",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -916,12 +1000,13 @@
       "id": "gcp-prod-070",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Vertex AI",
-      "sub_service": "Vertex AI Model Registry & Endpoints",
+      "sub_service": "Vertex AI Model Registry \u0026 Endpoints",
       "service_type": "모델 버전 관리 및 서빙",
       "description": "훈련된 모델 버전을 라이프사이클에 따라 추적 관리하고, 트래픽 분할(카나리 배포) 및 오토스케일링을 지원하는 실시간 추론 엔드포인트에 배포",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -933,8 +1018,9 @@
       "service_type": "노코드 머신러닝 솔루션",
       "description": "코딩 없이 데이터 라벨링만으로 컴퓨터 비전",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -947,33 +1033,36 @@
       "description": "VS Code, JetBrains IDE 및 Cloud Shell 내에서 실시간 코드 자동 완성, 코드 생성, 버그 수정, 리팩토링 및 단위 테스트 작성을 지원",
       "pricing_unit": "User-Month",
       "pricing_model": "AI Developer Assistant",
-      "base_rate_usd": 19.0,
+      "base_rate_usd": 19,
+      "base_rate_krw": 26282.32,
       "free_tier_allowance": "Free trial available for developers",
-      "cost_optimization_tip": "Inline code completion in VS Code & JetBrains"
+      "cost_optimization_tip": "Inline code completion in VS Code \u0026 JetBrains"
     },
     {
       "id": "gcp-prod-073",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Document AI",
-      "sub_service": "Document AI & Custom Document Extractor",
+      "sub_service": "Document AI \u0026 Custom Document Extractor",
       "service_type": "지능형 문서 처리 (IDP)",
       "description": "머신러닝과 OCR을 결합하여 영수증, 세금계산서, 계약서, 신분증 등 비정형 문서에서 키-값 및 표 데이터를 구조화된 JSON으로 추출",
       "pricing_unit": "1K Pages Processed",
       "pricing_model": "Intelligent Document Processing",
       "base_rate_usd": 1.5,
+      "base_rate_krw": 2074.92,
       "free_tier_allowance": "First 1k pages free/mo",
-      "cost_optimization_tip": "Extract structured JSON from invoices & PDFs"
+      "cost_optimization_tip": "Extract structured JSON from invoices \u0026 PDFs"
     },
     {
       "id": "gcp-prod-074",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "Contact Center AI (CCAI)",
-      "sub_service": "Dialogflow CX & Agent Assist",
+      "sub_service": "Dialogflow CX \u0026 Agent Assist",
       "service_type": "지능형 고객센터 솔루션",
       "description": "복잡한 멀티턴 대화를 처리하는 시각적 봇 빌더(Dialogflow CX)와 상담원의 통화 내용을 실시간 청취하여 답변 지식을 추천하는 AI 도구",
       "pricing_unit": "Chat Session / Audio Min",
       "pricing_model": "Conversational AI",
       "base_rate_usd": 0.007,
+      "base_rate_krw": 9.68,
       "free_tier_allowance": "First 10k chat requests free",
       "cost_optimization_tip": "Dialogflow CX visual bot builder"
     },
@@ -981,12 +1070,13 @@
       "id": "gcp-prod-075",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "인지 서비스 (Pre-trained APIs)",
-      "sub_service": "Cloud Vision & Video Intelligence API",
+      "sub_service": "Cloud Vision \u0026 Video Intelligence API",
       "service_type": "컴퓨터 비전 분석 API",
       "description": "이미지 및 동영상 내 얼굴, 라벨, 텍스트(OCR), 유해 콘텐츠, 샷 체인지 등을 사전 학습된 모델로 신속하게 인식",
       "pricing_unit": "1K API Units / Audio Min",
       "pricing_model": "Pre-trained Cognitive API",
       "base_rate_usd": 1.5,
+      "base_rate_krw": 2074.92,
       "free_tier_allowance": "Free tier available (5k units/mo)",
       "cost_optimization_tip": "Plug-and-play AI without model training"
     },
@@ -994,12 +1084,13 @@
       "id": "gcp-prod-076",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "인지 서비스 (Pre-trained APIs)",
-      "sub_service": "Cloud Speech-to-Text & Text-to-Speech",
+      "sub_service": "Cloud Speech-to-Text \u0026 Text-to-Speech",
       "service_type": "음성 인식 및 합성 API",
       "description": "125개 이상의 언어/방언을 텍스트로 고정밀 전사(Chirp 모델 지원)하거나 텍스트를 자연스러운 인간 음성(WaveNet/Journey)으로 합성",
       "pricing_unit": "1K API Units / Audio Min",
       "pricing_model": "Pre-trained Cognitive API",
       "base_rate_usd": 1.5,
+      "base_rate_krw": 2074.92,
       "free_tier_allowance": "Free tier available (5k units/mo)",
       "cost_optimization_tip": "Plug-and-play AI without model training"
     },
@@ -1007,12 +1098,13 @@
       "id": "gcp-prod-077",
       "category": "인공지능 및 ML (AI/ML)",
       "main_product": "인지 서비스 (Pre-trained APIs)",
-      "sub_service": "Cloud Translation & Natural Language API",
+      "sub_service": "Cloud Translation \u0026 Natural Language API",
       "service_type": "자연어 분석 및 번역",
       "description": "다국어 실시간 동적 기계 번역 및 텍스트 내 감정 분석(Sentiment)",
       "pricing_unit": "1K API Units / Audio Min",
       "pricing_model": "Pre-trained Cognitive API",
       "base_rate_usd": 1.5,
+      "base_rate_krw": 2074.92,
       "free_tier_allowance": "Free tier available (5k units/mo)",
       "cost_optimization_tip": "Plug-and-play AI without model training"
     },
@@ -1020,12 +1112,13 @@
       "id": "gcp-prod-078",
       "category": "네트워킹 (Networking)",
       "main_product": "Virtual Private Cloud (VPC)",
-      "sub_service": "VPC Networks & Subnets",
+      "sub_service": "VPC Networks \u0026 Subnets",
       "service_type": "글로벌 가상 네트워크",
       "description": "단일 리전에 종속되지 않고 전 세계 모든 GCP 리전에 걸쳐 서브넷을 구성할 수 있는 글로벌 소프트웨어 정의 네트워크(SDN)",
       "pricing_unit": "GB Egress / Subnet",
       "pricing_model": "Global Software Defined Net",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "Free intra-VPC same-zone traffic",
       "cost_optimization_tip": "Use Shared VPC for central network control"
     },
@@ -1039,6 +1132,7 @@
       "pricing_unit": "GB Egress / Subnet",
       "pricing_model": "Global Software Defined Net",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "Free intra-VPC same-zone traffic",
       "cost_optimization_tip": "Use Shared VPC for central network control"
     },
@@ -1052,6 +1146,7 @@
       "pricing_unit": "GB-Month",
       "pricing_model": "Object Storage",
       "base_rate_usd": 0.02,
+      "base_rate_krw": 27.67,
       "free_tier_allowance": "10GB free egress to internet/mo",
       "cost_optimization_tip": "Use standard storage for hot active assets"
     },
@@ -1059,12 +1154,13 @@
       "id": "gcp-prod-081",
       "category": "네트워킹 (Networking)",
       "main_product": "Virtual Private Cloud (VPC)",
-      "sub_service": "VPC Network Peering & Flow Logs",
+      "sub_service": "VPC Network Peering \u0026 Flow Logs",
       "service_type": "피어링 및 패킷 모니터링",
       "description": "외부 공용망을 거치지 않는 내부 IP 기반 프로젝트 간 고속 연결 및 네트워크 패킷 흐름 샘플링 로깅",
       "pricing_unit": "GB Egress / Subnet",
       "pricing_model": "Global Software Defined Net",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "Free intra-VPC same-zone traffic",
       "cost_optimization_tip": "Use Shared VPC for central network control"
     },
@@ -1078,6 +1174,7 @@
       "pricing_unit": "Forwarding Rule Hour + GB Data",
       "pricing_model": "Global Anycast L7 LB",
       "base_rate_usd": 0.025,
+      "base_rate_krw": 34.58,
       "free_tier_allowance": "First 5 forwarding rules included",
       "cost_optimization_tip": "Single global IP routes traffic to nearest region"
     },
@@ -1091,6 +1188,7 @@
       "pricing_unit": "Forwarding Rule Hour + GB Data",
       "pricing_model": "Global Anycast L7 LB",
       "base_rate_usd": 0.025,
+      "base_rate_krw": 34.58,
       "free_tier_allowance": "First 5 forwarding rules included",
       "cost_optimization_tip": "Single global IP routes traffic to nearest region"
     },
@@ -1104,7 +1202,8 @@
       "pricing_unit": "GB Transferred / HTTP Request",
       "pricing_model": "Edge Content Delivery",
       "base_rate_usd": 0.02,
-      "free_tier_allowance": "Integrated with Cloud Storage & Load Balancer",
+      "base_rate_krw": 27.67,
+      "free_tier_allowance": "Integrated with Cloud Storage \u0026 Load Balancer",
       "cost_optimization_tip": "Edge caching reduces origin bandwidth cost"
     },
     {
@@ -1117,7 +1216,8 @@
       "pricing_unit": "GB Transferred / HTTP Request",
       "pricing_model": "Edge Content Delivery",
       "base_rate_usd": 0.02,
-      "free_tier_allowance": "Integrated with Cloud Storage & Load Balancer",
+      "base_rate_krw": 27.67,
+      "free_tier_allowance": "Integrated with Cloud Storage \u0026 Load Balancer",
       "cost_optimization_tip": "Edge caching reduces origin bandwidth cost"
     },
     {
@@ -1130,6 +1230,7 @@
       "pricing_unit": "Port-Hour (10G/100G) + Egress",
       "pricing_model": "Hybrid Private Direct Link",
       "base_rate_usd": 0.6,
+      "base_rate_krw": 829.97,
       "free_tier_allowance": "Sub-10ms low latency link",
       "cost_optimization_tip": "Lower egress charges than public internet"
     },
@@ -1143,8 +1244,9 @@
       "pricing_unit": "Tunnel-Hour",
       "pricing_model": "HA IPsec VPN Gateway",
       "base_rate_usd": 0.05,
+      "base_rate_krw": 69.16,
       "free_tier_allowance": "99.99% SLA availability",
-      "cost_optimization_tip": "Secure encrypted tunnel between on-prem & GCP"
+      "cost_optimization_tip": "Secure encrypted tunnel between on-prem \u0026 GCP"
     },
     {
       "id": "gcp-prod-088",
@@ -1156,6 +1258,7 @@
       "pricing_unit": "Zone-Month + 1M Queries",
       "pricing_model": "Managed Anycast DNS",
       "base_rate_usd": 0.2,
+      "base_rate_krw": 276.66,
       "free_tier_allowance": "100% SLA availability",
       "cost_optimization_tip": "Supports DNSSEC and Private VPC zones"
     },
@@ -1169,6 +1272,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -1182,8 +1286,9 @@
       "pricing_unit": "Tunnel-Hour",
       "pricing_model": "HA IPsec VPN Gateway",
       "base_rate_usd": 0.05,
+      "base_rate_krw": 69.16,
       "free_tier_allowance": "99.99% SLA availability",
-      "cost_optimization_tip": "Secure encrypted tunnel between on-prem & GCP"
+      "cost_optimization_tip": "Secure encrypted tunnel between on-prem \u0026 GCP"
     },
     {
       "id": "gcp-prod-091",
@@ -1195,6 +1300,7 @@
       "pricing_unit": "GB Egress / Subnet",
       "pricing_model": "Global Software Defined Net",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "Free intra-VPC same-zone traffic",
       "cost_optimization_tip": "Use Shared VPC for central network control"
     },
@@ -1202,12 +1308,13 @@
       "id": "gcp-prod-092",
       "category": "보안 및 거버넌스 (Security)",
       "main_product": "Cloud IAM",
-      "sub_service": "Cloud IAM & IAM Recommender",
+      "sub_service": "Cloud IAM \u0026 IAM Recommender",
       "service_type": "신원 및 접근 통제",
       "description": "리소스별 정밀한 역할 기반 접근 통제(RBAC), 임시 권한 부여, 워크로드 아이덴티티 및 AI 기반 최소 권한 권장 도구",
       "pricing_unit": "Secret Version-Month / Key Ops",
-      "pricing_model": "Security Vault & Access",
+      "pricing_model": "Security Vault \u0026 Access",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "10 active secret versions free",
       "cost_optimization_tip": "Never hardcode credentials in source code"
     },
@@ -1219,8 +1326,9 @@
       "service_type": "암호화 키 라이프사이클 관리",
       "description": "소프트웨어 암호화 키, FIPS 140-2 Level 3 하드웨어 보안 모듈(HSM) 및 외부 자체 보관 키(EKM)의 중앙 통합 관리",
       "pricing_unit": "Secret Version-Month / Key Ops",
-      "pricing_model": "Security Vault & Access",
+      "pricing_model": "Security Vault \u0026 Access",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "10 active secret versions free",
       "cost_optimization_tip": "Never hardcode credentials in source code"
     },
@@ -1232,8 +1340,9 @@
       "service_type": "시크릿 및 자격 증명 금고",
       "description": "API 키, 데이터베이스 암호, 인증서와 같은 민감 자격 증명을 암호화 저장하고 버전 관리 및 자동 교체(Rotation) 지원",
       "pricing_unit": "Secret Version-Month / Key Ops",
-      "pricing_model": "Security Vault & Access",
+      "pricing_model": "Security Vault \u0026 Access",
       "base_rate_usd": 0.06,
+      "base_rate_krw": 83,
       "free_tier_allowance": "10 active secret versions free",
       "cost_optimization_tip": "Never hardcode credentials in source code"
     },
@@ -1241,12 +1350,13 @@
       "id": "gcp-prod-095",
       "category": "보안 및 거버넌스 (Security)",
       "main_product": "Cloud Armor",
-      "sub_service": "Cloud Armor & Adaptive Protection",
+      "sub_service": "Cloud Armor \u0026 Adaptive Protection",
       "service_type": "웹 방화벽 (WAF) 및 DDoS 방어",
       "description": "L3/L4 인프라 DDoS 자동 방어",
       "pricing_unit": "Policy-Month + 1M Requests",
-      "pricing_model": "Cloud WAF & DDoS Protection",
-      "base_rate_usd": 5.0,
+      "pricing_model": "Cloud WAF \u0026 DDoS Protection",
+      "base_rate_usd": 5,
+      "base_rate_krw": 6916.4,
       "free_tier_allowance": "L3/L4 DDoS defense included free",
       "cost_optimization_tip": "Block OWASP Top 10 vulnerabilities"
     },
@@ -1258,8 +1368,8 @@
       "service_type": "통합 클라우드 보안 관리 (CSPM/CWPP)",
       "description": "GCP 자산의 보안 취약점, 잘못된 구성(Misconfiguration), 컨테이너 런타임 위협 및 비정상 접근을 단일 콘솔에서 탐지/대응",
       "pricing_unit": "Project-Month / vCPU",
-      "pricing_model": "CSPM & CWPP Security Console",
-      "base_rate_usd": 0.0,
+      "pricing_model": "CSPM \u0026 CWPP Security Console",
+      "base_rate_usd": 0,
       "free_tier_allowance": "SCC Standard tier is 100% FREE",
       "cost_optimization_tip": "Continuous compliance audit (CIS, ISO, PCI)"
     },
@@ -1272,9 +1382,10 @@
       "description": "텍스트, 이미지, 스토리지 내의 주민등록번호, 신용카드 번호, 이메일 등 150개 이상의 PII 정보를 자동 탐지 및 마스킹/암호화",
       "pricing_unit": "GB Scanned / Transformed",
       "pricing_model": "PII Data Inspection",
-      "base_rate_usd": 1.0,
+      "base_rate_usd": 1,
+      "base_rate_krw": 1383.28,
       "free_tier_allowance": "First 1GB free/mo",
-      "cost_optimization_tip": "Auto-mask credit card & SSN PII data"
+      "cost_optimization_tip": "Auto-mask credit card \u0026 SSN PII data"
     },
     {
       "id": "gcp-prod-098",
@@ -1286,6 +1397,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -1298,7 +1410,8 @@
       "description": "사설 디지털 인증서 발급, 갱신 및 해지 작업을 고가용성 클라우드 인프라에서 자동화하는 완전 관리형 CA 서비스",
       "pricing_unit": "Base Unit",
       "pricing_model": "Managed Service",
-      "base_rate_usd": 10.0,
+      "base_rate_usd": 10,
+      "base_rate_krw": 13832.8,
       "free_tier_allowance": "Standard GCP billing",
       "cost_optimization_tip": "Consult GCP Calculator for granular SKUs"
     },
@@ -1312,6 +1425,7 @@
       "pricing_unit": "Cluster-Hour (bash.10) + Node vCPU",
       "pricing_model": "Pay-as-you-go",
       "base_rate_usd": 0.1,
+      "base_rate_krw": 138.33,
       "free_tier_allowance": "4/mo cluster credit per billing account",
       "cost_optimization_tip": "Use GKE Standard for custom kernel tuning"
     },
@@ -1319,12 +1433,13 @@
       "id": "gcp-prod-101",
       "category": "보안 및 거버넌스 (Security)",
       "main_product": "Chronicle Security Operations",
-      "sub_service": "Chronicle SIEM & SOAR",
+      "sub_service": "Chronicle SIEM \u0026 SOAR",
       "service_type": "차세대 보안 관제 플랫폼",
       "description": "방대한 양의 보안 원격 측정 데이터를 페타바이트 단위로 수집/분석하고 플레이북을 통해 위협에 자동 대응",
       "pricing_unit": "Base Unit",
       "pricing_model": "Managed Service",
-      "base_rate_usd": 10.0,
+      "base_rate_usd": 10,
+      "base_rate_krw": 13832.8,
       "free_tier_allowance": "Standard GCP billing",
       "cost_optimization_tip": "Consult GCP Calculator for granular SKUs"
     },
@@ -1338,6 +1453,7 @@
       "pricing_unit": "GB Ingested / Retained",
       "pricing_model": "Observability Suite",
       "base_rate_usd": 0.5,
+      "base_rate_krw": 691.64,
       "free_tier_allowance": "50GB free log ingestion + 150GB free metrics/mo",
       "cost_optimization_tip": "Set SLO/SLA alert policies"
     },
@@ -1351,19 +1467,21 @@
       "pricing_unit": "TB Scanned (.25) / Storage GB",
       "pricing_model": "Serverless DW",
       "base_rate_usd": 6.25,
+      "base_rate_krw": 8645.5,
       "free_tier_allowance": "1TB free queries + 10GB free storage/mo",
-      "cost_optimization_tip": "Long-term storage (>90 days) gets 50% discount (bash.01/GB)"
+      "cost_optimization_tip": "Long-term storage (\u003e90 days) gets 50% discount (bash.01/GB)"
     },
     {
       "id": "gcp-prod-104",
       "category": "운영 및 DevOps (DevOps)",
-      "main_product": "Cloud Trace & Profiler",
-      "sub_service": "Cloud Trace & Cloud Profiler",
+      "main_product": "Cloud Trace \u0026 Profiler",
+      "sub_service": "Cloud Trace \u0026 Cloud Profiler",
       "service_type": "분산 추적 및 애플리케이션 분석",
       "description": "마이크로서비스 간 지연 시간 병목을 추적하고, 프로덕션 환경에서 오버헤드 없이 지속적으로 CPU/메모리 낭비 코드를 프로파일링",
       "pricing_unit": "Base Unit",
       "pricing_model": "Managed Service",
-      "base_rate_usd": 10.0,
+      "base_rate_usd": 10,
+      "base_rate_krw": 13832.8,
       "free_tier_allowance": "Standard GCP billing",
       "cost_optimization_tip": "Consult GCP Calculator for granular SKUs"
     },
@@ -1376,7 +1494,8 @@
       "description": "실행 중인 애플리케이션에서 발생한 충돌 및 스택 트레이스 오류를 실시간으로 집계하고 빈도별로 그룹화하여 알림",
       "pricing_unit": "Base Unit",
       "pricing_model": "Managed Service",
-      "base_rate_usd": 10.0,
+      "base_rate_usd": 10,
+      "base_rate_krw": 13832.8,
       "free_tier_allowance": "Standard GCP billing",
       "cost_optimization_tip": "Consult GCP Calculator for granular SKUs"
     },
@@ -1390,6 +1509,7 @@
       "pricing_unit": "Build Minute",
       "pricing_model": "Serverless CI/CD",
       "base_rate_usd": 0.003,
+      "base_rate_krw": 4.15,
       "free_tier_allowance": "120 free build-minutes per day",
       "cost_optimization_tip": "Parallel container image builds"
     },
@@ -1401,8 +1521,9 @@
       "service_type": "유니버설 패키지 및 컨테이너 저장소",
       "description": "Docker/OCI 컨테이너 이미지와 언어별 패키지(Maven, npm, Python, Apt, Yum)를 저장하고 취약점 스캔을 수행하는 레지스트리",
       "pricing_unit": "GB Storage-Month",
-      "pricing_model": "Package & Image Registry",
+      "pricing_model": "Package \u0026 Image Registry",
       "base_rate_usd": 0.1,
+      "base_rate_krw": 138.33,
       "free_tier_allowance": "0.5GB free storage/mo",
       "cost_optimization_tip": "Vulnerability scanning for OCI images"
     },
@@ -1416,6 +1537,7 @@
       "pricing_unit": "vCPU-Hour",
       "pricing_model": "Enterprise Tier",
       "base_rate_usd": 0.008,
+      "base_rate_krw": 11.07,
       "free_tier_allowance": "Multi-cloud management fee",
       "cost_optimization_tip": "Centralized GKE policy governance"
     },
@@ -1429,6 +1551,7 @@
       "pricing_unit": "GB Egress / Subnet",
       "pricing_model": "Global Software Defined Net",
       "base_rate_usd": 0.01,
+      "base_rate_krw": 13.83,
       "free_tier_allowance": "Free intra-VPC same-zone traffic",
       "cost_optimization_tip": "Use Shared VPC for central network control"
     },
@@ -1442,6 +1565,7 @@
       "pricing_unit": "Cluster-Hour (bash.10) + Node vCPU",
       "pricing_model": "Pay-as-you-go",
       "base_rate_usd": 0.1,
+      "base_rate_krw": 138.33,
       "free_tier_allowance": "4/mo cluster credit per billing account",
       "cost_optimization_tip": "Use GKE Standard for custom kernel tuning"
     },
@@ -1453,8 +1577,9 @@
       "service_type": "완전 격리형 폐쇄망 클라우드",
       "description": "외부 인터넷 및 공용 GCP와 완전히 물리적으로 차단된(Air-gapped) 환경에서 Vertex AI와 클라우드 기능을 자체 운영",
       "pricing_unit": "1K Tokens / Node-Hour",
-      "pricing_model": "Foundation Model & MLOps",
-      "base_rate_usd": 7.5e-05,
+      "pricing_model": "Foundation Model \u0026 MLOps",
+      "base_rate_usd": 0.000075,
+      "base_rate_krw": 0.1,
       "free_tier_allowance": "Gemini 1.5 Flash (bash.075/1M input tokens)",
       "cost_optimization_tip": "Gemini 1.5 Flash is 16x cheaper than Gemini Pro"
     },
@@ -1468,6 +1593,7 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
@@ -1481,51 +1607,49 @@
       "pricing_unit": "vCPU-Hour / GB-RAM-Hour",
       "pricing_model": "Pay-as-you-go (1-sec billing)",
       "base_rate_usd": 0.0336,
+      "base_rate_krw": 46.48,
       "free_tier_allowance": "e2-micro 1 instance free in select US regions",
       "cost_optimization_tip": "Commitment Discounts (CUD) save 37-55%"
     },
     {
       "id": "gcp-prod-114",
       "category": "관리 및 비용 거버넌스 (Management)",
-      "main_product": "Cloud Billing & Cost Management",
+      "main_product": "Cloud Billing \u0026 Cost Management",
       "sub_service": "예산",
       "service_type": "알림 및 비용 권장 도구",
       "description": "클라우드 재무 관리 (FinOps)",
       "pricing_unit": "Free Tool",
-      "pricing_model": "FinOps & IaC Automation",
-      "base_rate_usd": 0.0,
+      "pricing_model": "FinOps \u0026 IaC Automation",
+      "base_rate_usd": 0,
       "free_tier_allowance": "100% FREE tool",
       "cost_optimization_tip": "Automate infrastructure as code with Terraform"
     },
     {
       "id": "gcp-prod-115",
       "category": "관리 및 비용 거버넌스 (Management)",
-      "main_product": "Cloud Deployment Manager & Terraform",
+      "main_product": "Cloud Deployment Manager \u0026 Terraform",
       "sub_service": "Infrastructure as Code (IaC)",
       "service_type": "선언적 인프라 자동화 도구",
       "description": "선언적 템플릿(YAML 또는 HashiCorp Terraform)을 사용하여 전체 GCP 리소스를 코드로 정의하고 자동 프로비저닝",
       "pricing_unit": "Free Tool",
-      "pricing_model": "FinOps & IaC Automation",
-      "base_rate_usd": 0.0,
+      "pricing_model": "FinOps \u0026 IaC Automation",
+      "base_rate_usd": 0,
       "free_tier_allowance": "100% FREE tool",
       "cost_optimization_tip": "Automate infrastructure as code with Terraform"
+    },
+    {
+      "id": "gcp-prod-116",
+      "category": "스토리지 (Storage)",
+      "main_product": "Persistent Disk",
+      "sub_service": "Extreme Persistent Disk (pd-extreme)",
+      "service_type": "초고성능 블록 스토리지 (IOPS 과금)",
+      "description": "SAP HANA 및 대규모 DB 전용 초고성능 스토리지. 프로비저닝된 용량(서울 225.47원/GB)과 IOPS(서울 117.58원/IOPS/월)가 분리 청구됨.",
+      "pricing_unit": "IOPS-Month (117.58 KRW) \u0026 GB-Month (225.47 KRW)",
+      "pricing_model": "Capacity + Provisioned IOPS",
+      "base_rate_usd": 0.035,
+      "base_rate_krw": 117.58,
+      "free_tier_allowance": "No free tier. 60,000 IOPS costs ~7,054,728 KRW/month (~9,664 KRW/hour).",
+      "cost_optimization_tip": "⚠️ CRITICAL: Always use pd-balanced unless certified DB requires 100k+ IOPS."
     }
-  ],
-  "currency_exchange": {
-    "USD_TO_KRW": 1350.0
-  },
-  "region_multipliers": {
-    "us-central1": 1.0,
-    "us-east1": 1.0,
-    "us-west1": 1.0,
-    "asia-northeast3": 1.2,
-    "asia-northeast1": 1.18,
-    "asia-east1": 1.15,
-    "europe-west1": 1.1
-  },
-  "commitment_discounts": {
-    "none": 1.0,
-    "1-year": 0.63,
-    "3-year": 0.45
-  }
+  ]
 }

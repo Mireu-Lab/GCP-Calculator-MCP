@@ -81,21 +81,23 @@ func runComputeCLI(args []string) {
 	tpuType := fs.String("tpu-type", "", "TPU model (e.g. tpu-v2-8, tpu-v3-8, tpu-v4-pod-8, tpu-v5litepod-8, tpu-v5p-8)")
 	tpuCount := fs.Int("tpu-count", 0, "Number of TPUs")
 	storage := fs.Float64("storage", 20, "Disk size in GB")
-	storageType := fs.String("storage-type", "standard", "Disk type")
+	storageType := fs.String("storage-type", "standard", "Disk type (standard, balanced, ssd, extreme)")
+	iops := fs.Float64("iops", 0, "Provisioned IOPS (for Extreme / Hyperdisk)")
 	_ = fs.Parse(args)
 
 	input := calculator.ComputeEngineInput{
-		MachineType:   *machine,
-		Region:        *region,
-		Commitment:    *commitment,
-		HoursPerMonth: *hours,
-		IsSpot:        *spot,
-		GPUType:       *gpuType,
-		GPUCount:      *gpuCount,
-		TPUType:       *tpuType,
-		TPUCount:      *tpuCount,
-		StorageGB:     *storage,
-		StorageType:   *storageType,
+		MachineType:     *machine,
+		Region:          *region,
+		Commitment:      *commitment,
+		HoursPerMonth:   *hours,
+		IsSpot:          *spot,
+		GPUType:         *gpuType,
+		GPUCount:        *gpuCount,
+		TPUType:         *tpuType,
+		TPUCount:        *tpuCount,
+		StorageGB:       *storage,
+		StorageType:     *storageType,
+		ProvisionedIOPS: *iops,
 	}
 
 	res := calculator.CalculateComputeEngine(input)

@@ -101,6 +101,8 @@ func (s *Server) handleToolsList(id interface{}) {
 				"type": "object",
 				"properties": map[string]interface{}{
 					"machine_type": map[string]interface{}{"type": "string", "default": "e2-micro"},
+					"region": map[string]interface{}{"type": "string", "default": "us-central1", "description": "e.g. us-central1, us-west1, asia-northeast3 (Seoul)"},
+					"commitment": map[string]interface{}{"type": "string", "default": "none", "description": "none, 1-year, 3-year"},
 					"hours_per_month": map[string]interface{}{"type": "number", "default": 730},
 					"is_spot": map[string]interface{}{"type": "boolean", "default": false},
 					"gpu_type": map[string]interface{}{"type": "string", "description": "e.g. nvidia-tesla-t4, nvidia-l4, nvidia-tesla-a100-80gb, nvidia-h100-80gb"},
@@ -108,7 +110,8 @@ func (s *Server) handleToolsList(id interface{}) {
 					"tpu_type": map[string]interface{}{"type": "string", "description": "e.g. tpu-v2-8, tpu-v3-8, tpu-v4-pod-8, tpu-v5litepod-8, tpu-v5p-8"},
 					"tpu_count": map[string]interface{}{"type": "number", "default": 0},
 					"storage_gb": map[string]interface{}{"type": "number", "default": 20},
-					"storage_type": map[string]interface{}{"type": "string", "default": "standard"},
+					"storage_type": map[string]interface{}{"type": "string", "default": "standard", "description": "standard, balanced, ssd, extreme"},
+					"provisioned_iops": map[string]interface{}{"type": "number", "default": 0, "description": "Provisioned IOPS for Extreme PD or Hyperdisk"},
 				},
 			},
 		},
